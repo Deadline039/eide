@@ -379,7 +379,7 @@ export abstract class ConfigModel<DataType> {
 
             // set default value
             for (const key in _default) {
-                if (!isNullOrUndefined(_default[key])) {
+                if (!(_default[key] === undefined || _default[key] === undefined)) {
                     if (typeof (<any>newConfig)[key] !== typeof _default[key]) {
                         (<any>newConfig)[key] = _default[key];
                     }
